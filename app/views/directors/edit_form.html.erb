@@ -1,8 +1,8 @@
 <div class="page-header">
-  <h1>Edit Director #<%= @director.id %></h1>
+  <h1>Edit Director #<%=@director.id%></h1>
 </div>
 
-<form action="/update_director/<%= @director.id %>" class="form-horizontal">
+<form action="http://localhost:3000/update_director/<%=params[:id]%>" class="form-horizontal">
   <!-- Label and input for dob -->
   <div class="form-group">
     <label for="dob" class="col-sm-2 control-label">
@@ -29,7 +29,7 @@
       Bio
     </label>
     <div class="col-sm-10">
-      <textarea id="bio" name="the_bio" placeholder="Bio" class="form-control" rows="3"><%= @director.bio %></textarea>
+      <input type="text" id="bio" name="the_bio" placeholder="Bio" class="form-control" value="<%= @director.bio %>">
     </div>
   </div>
 
@@ -45,7 +45,7 @@
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <input type="submit" value="Update Director" class="btn btn-primary">
+      <button>Update Director</button>
     </div>
   </div>
 </form>
